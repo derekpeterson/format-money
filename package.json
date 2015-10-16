@@ -1,0 +1,24 @@
+{
+  "name": "format-money",
+  "version": "1.0.0",
+  "description": "A module for formatting USD currency",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --ui bdd --compilers js:babel/register  test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derekpeterson/format-money.git"
+  },
+  "author": "Derek Peterson <derekpetey@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derekpeterson/format-money/issues"
+  },
+  "homepage": "https://github.com/derekpeterson/format-money#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
+  }
+}
