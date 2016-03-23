@@ -1,6 +1,6 @@
 const DECIMAL_RE = /^0\./;
 
-export default function (num) {
+export default function (num, includeCents=true) {
   let isNeg = num < 0;
   let val = Math.abs(num);
   let cents = '00';
@@ -23,5 +23,6 @@ export default function (num) {
   })
   .reverse().join('');
 
-  return `${isNeg ? '-' : ''}$${val}.${cents}`;
+  if(includeCents) return `${isNeg ? '-' : ''}$${val}.${cents}`;
+  else return `${isNeg ? '-' : ''}$${val}`;
 };
