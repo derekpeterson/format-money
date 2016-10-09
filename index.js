@@ -2,8 +2,8 @@ export default function money(num, includeCents=true) {
   num = parseFloat(num);
   let isNeg = num < 0;
   let val = Math.abs(num);
-
   let [dollars, cents] = (val+'').split('.');
+  
   if(!dollars) {
     dollars = '0';
   }
