@@ -1,4 +1,4 @@
-export default function money(num, includeCents=true) {
+export default function(num, includeCents=true) {
   num = parseFloat(num);
   let isNeg = num < 0;
   let val = Math.abs(num);
