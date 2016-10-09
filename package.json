@@ -1,6 +1,6 @@
 {
   "name": "format-money",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module for formatting USD currency",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/derekpeterson/format-money.git"
+    "url": "git+https://github.com/faceyspacey/format-money.git"
   },
-  "author": "Derek Peterson <derekpetey@gmail.com>",
+  "author": "James Gillmore <james@faceyspacey.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/derekpeterson/format-money/issues"
+    "url": "https://github.com/faceyspacey/format-money/issues"
   },
-  "homepage": "https://github.com/derekpeterson/format-money#readme",
+  "homepage": "https://github.com/faceyspacey/format-money#readme",
   "devDependencies": {
     "babel": "^5.8.23",
     "chai": "^3.3.0",
