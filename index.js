@@ -1,8 +1,8 @@
-export default function(num, includeCents=true) {
+module.exports = function(num, includeCents=true) {
   num = parseFloat(num);
-  let isNeg = num < 0;
-  let val = Math.abs(num);
-  let [dollars, cents] = (val+'').split('.');
+  var isNeg = num < 0;
+  var val = Math.abs(num);
+  var [dollars, cents] = (val+'').split('.');
   
   if(!dollars) {
     dollars = '0';
@@ -12,7 +12,7 @@ export default function(num, includeCents=true) {
   }
   
   cents += '000';
-  let third = cents.slice(2,3);
+  var third = cents.slice(2,3);
   if(parseInt(third) >= 5) {
     cents = (parseInt(cents.slice(0,2))+1)+''; 
   }
@@ -29,6 +29,6 @@ export default function(num, includeCents=true) {
   })
   .reverse().join('');
 
-  if(includeCents) return `${isNeg ? '-' : ''}$${dollars}.${cents}`;
-  else return `${isNeg ? '-' : ''}$${dollars}`;
+  if(includeCents) return (isNeg ? '-' : '')+'$'+dollars+'.'+cents;;
+  else return (isNeg ? '-' : '')+'$'+dollars; 
 };
