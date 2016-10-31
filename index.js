@@ -29,6 +29,5 @@ module.exports = function(num, includeCents=true) {
   })
   .reverse().join('');
 
-  if(includeCents) return (isNeg ? '-' : '')+'$'+dollars+'.'+cents;;
-  else return (isNeg ? '-' : '')+'$'+dollars; 
+  return (isNeg ? '-' : '')+'$'+dollars+(includeCents ? '.'+cents : '');
 };
