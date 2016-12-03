@@ -6,7 +6,9 @@ module.exports = function(num, includeCents) {
   num = parseFloat(num);
   var isNeg = num < 0;
   var val = Math.abs(num);
-  var [dollars, cents] = (val+'').split('.');
+  var parts = (val+'').split('.');
+  var dollars = parts[0];
+  var cents = parts[1];
   
   if(!dollars) {
     dollars = '0';
