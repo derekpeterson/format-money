@@ -1,5 +1,5 @@
 module.exports = function(num, includeCents) {
-  if(typeof includeCents === 'undefined) {
+  if(typeof includeCents === 'undefined') {
     includeCenets = true;
   }
      
