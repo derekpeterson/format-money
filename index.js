@@ -1,6 +1,6 @@
 module.exports = function(num, includeCents) {
   if(typeof includeCents === 'undefined') {
-    includeCenets = true;
+    includeCents = true;
   }
      
   num = parseFloat(num);
