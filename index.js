@@ -1,4 +1,8 @@
-module.exports = function(num, includeCents=true) {
+module.exports = function(num, includeCents) {
+  if(typeof includeCents === 'undefined) {
+    includeCenets = true;
+  }
+     
   num = parseFloat(num);
   var isNeg = num < 0;
   var val = Math.abs(num);
