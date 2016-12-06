@@ -1,27 +1,39 @@
-const DECIMAL_RE = /^0\./;
-
-export default function (num) {
-  let isNeg = num < 0;
-  let val = Math.abs(num);
-  let cents = '00';
-
-  if (val > 0) {
-    cents = val - Math.floor(val);
-    val = Math.floor(val);
-    cents = ('' + cents).replace(DECIMAL_RE, '');
-    cents = cents.length < 2 ? cents + '00' : cents;
-    cents = cents.slice(0, 2);
+module.exports = function(num, includeCents) {
+  if(typeof includeCents === 'undefined') {
+    includeCents = true;
   }
+     
+  num = parseFloat(num);
+  var isNeg = num < 0;
+  var val = Math.abs(num);
+  var parts = (val+'').split('.');
+  var dollars = parts[0];
+  var cents = parts[1];
+  
+  if(!dollars) {
+    dollars = '0';
+  }
+  if(!cents) {
+    cents = '00';
+  }
+  
+  cents += '000';
+  var third = cents.slice(2,3);
+  if(parseInt(third) >= 5) {
+    cents = (parseInt(cents.slice(0,2))+1)+''; 
+  }
+  cents = cents.slice(0, 2);
+  
 
   // To add commas, split the dollar-number into an array of numbers, reverse
   // the array, add a comma after every third digit, reverse it back, and
   // re-join the digits
-  val = ('' + val)
+  dollars = ('' + dollars)
   .split('').reverse()
   .map(function (c, i) {
     return c + (i > 0 && i % 3 === 0 ? ',' : '');
   })
   .reverse().join('');
 
-  return `${isNeg ? '-' : ''}$${val}.${cents}`;
+  return (isNeg ? '-' : '')+'$'+dollars+(includeCents ? '.'+cents : '');
 };
